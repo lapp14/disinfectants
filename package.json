@@ -1,0 +1,22 @@
+{
+  "name": "disinfectant",
+  "version": "1.0.0",
+  "description": "disinfectant classification tool",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lapp14/disinfectants.git"
+  },
+  "author": "dan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lapp14/disinfectants/issues"
+  },
+  "homepage": "https://github.com/lapp14/disinfectants#readme",
+  "devDependencies": {
+    "gulp-install": "^0.6.0"
+  }
+}
