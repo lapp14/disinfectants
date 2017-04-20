@@ -1,7 +1,7 @@
 (function() {
 
 	angular
-		.module('disinfectant', ['ngAnimate'])
+		.module('disinfectant')
 		.controller('disinfectantCtrl', disinfectantCtrl);
 
 
