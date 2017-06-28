@@ -1,0 +1,25 @@
+<div class="definition-list">
+  <script type="text/ng-template"  id="tree_item_renderer.html">
+    <a href="/#/items-surfaces" ng-click="IS.setContent(data.page)">
+      {{data.name}}
+    </a>
+    <ul>
+      <li ng-repeat="data in data.nodes" ng-include="'tree_item_renderer.html'"></li>
+    </ul>
+  </script>
+
+  <ul>
+    <li ng-repeat="data in IS.tree" ng-include="'tree_item_renderer.html'"></li>
+  </ul>
+</div>
+<div class="definition-content content">
+  <div ng-include="IS.page">
+    
+  </div>
+</div>  
+
+
+<script>
+//crappy fix for anchor scrolling below navbar
+window.addEventListener("hashchange", function() { scrollBy(0, -50) });
+</script>

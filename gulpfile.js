@@ -2,11 +2,11 @@ var gulp 		= require('gulp');
 var connect		= require('gulp-connect');
 var cssnano 	= require('gulp-cssnano');
 var gulpif  	= require('gulp-if');
-var inject 		= require('gulp-inject-file');
 var less 		= require('gulp-less');
 var ngAnnotate	= require('gulp-ng-annotate');
 var strip		= require('gulp-strip-comments');
 var useref		= require('gulp-useref');
+var uglify		= require('gulp-uglify');
 var del 		= require('del');
 
 
@@ -23,7 +23,7 @@ gulp.task('watch', function() {
 	gulp.watch(['src/assets/less/**/*.less', 'src/**/*.html'], ['build']);
 });
 
-gulp.task('build', ['clean:dist', 'compile-less', 'build-app', 'build-copy']);
+gulp.task('build', ['clean:dist', 'compile-less', 'build-app', 'build-copy', 'build-css']);
 
 gulp.task('compile-less', function() {
 	return gulp.src('src/assets/less/**/*.less')
@@ -34,15 +34,24 @@ gulp.task('compile-less', function() {
 
 gulp.task('build-app', function() {
 
-	return gulp.src('src/index.html')
-		.pipe(inject({
-			pattern: '<!--\\s*inject:<filename>-->'
-		}))
+	return gulp.src(['src/**/*.html'], {base: 'src'} )
+		.pipe(useref())
+		.pipe(gulpif('*.js', ngAnnotate()))
+    	.pipe(gulpif('*.js', uglify({ 
+    		mangle: false
+		})))
+    	.pipe(gulpif('*.html', strip({ safe: true })))
 		.pipe(gulp.dest('dist'));
 });
 
 gulp.task('build-copy', function() {
-	return gulp.src(['src/**/*.{svg,png,jpg,gif,json}'], {base: 'src'} )
+	return gulp.src(['src/**/*.{html,svg,png,jpg,gif,json}'], {base: 'src'} )
+		.pipe(gulp.dest('dist'));
+});
+
+gulp.task('build-css', function() {
+	return gulp.src(['src/**/*.css'], {base: 'src'} )
+		.pipe(cssnano())
 		.pipe(gulp.dest('dist'));
 });
 

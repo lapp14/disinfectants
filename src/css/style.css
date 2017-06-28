@@ -16,6 +16,7 @@ body {
   	font-family: "Arial", sans-serif;
   	background-repeat: none;
   	background: #F0F0F1;  
+	color: #111;
  /* 	background: #67B26F;  
 	background: -webkit-linear-gradient(to top, #4ca2cd, #67B26F);
 	background: linear-gradient(to top, #4ca2cd, #67B26F);
@@ -23,7 +24,7 @@ body {
 }
 
 hr {
-	border: 1px solid #333;
+	border: 1px solid #111;
 	padding: 0;
 }
 
@@ -63,7 +64,6 @@ div.definition-search-type {
 	background: #fff;	
 	min-height: 700px;
 	opacity: 0.88;	
-	margin-top: 12px;
 	border: 1px solid #ccc;
 }
 
@@ -128,7 +128,7 @@ ul.nav > li {
 }
 
 a.card-link {
-	color: #333;
+	color: #111;
 }
 
 .card {

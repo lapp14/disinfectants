@@ -1,0 +1,27 @@
+
+<div class="definition-list">
+  <ul>
+    <li ng-repeat="row in vm.definitions" ng-show="vm.showDefinition(row)">
+      <a ng-cloak ng-href="/#/definitions#{{row.term}}">{{row.term}}</a>
+    </li>
+  </ul>
+</div>
+<div class="definition-content content">
+  <h1>Definitions</h1>
+  <input type="textfield" ng-model="vm.search" name="search" class="search" id="input-search" placeholder="Search {{vm.searchType}}..."/>        
+  <div class="btn-group definition-search-type" data-toggle="buttons">
+    <label>
+    <input type="radio" ng-model="vm.searchType" value="terms">
+    Terms 
+    </label>
+    <label>
+    <input type="radio" ng-model="vm.searchType" value="description">
+    Description 
+    </label>
+  </div>
+  <div ng-cloak ng-repeat="row in vm.definitions" class="definition" id="{{row.term}}" ng-show="vm.showDefinition(row)">
+    <h3 class="term" ng-bind="row.term"></h3>
+      <p class="description indent" ng-bind-html="row.description">            
+      </p>
+  </div>
+</div>
