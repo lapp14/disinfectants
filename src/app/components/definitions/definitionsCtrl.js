@@ -3,7 +3,7 @@
 		.module('disinfectants')
 		.controller('definitionsCtrl', definitionsCtrl);
 
-	definitionsCtrl.$inject = ['definitions', 'anchorScrollDirective'];
+	definitionsCtrl.$inject = ['definitions'];
 
 	function definitionsCtrl(definitions) {
 		

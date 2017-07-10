@@ -5,7 +5,7 @@
 		.module('disinfectants')
 		.controller('mainController', mainController);
 
-	function mainController($scope, $location) {
+	function mainController($scope, $location, $anchorScroll) {
 		
 		var vm = this;
 

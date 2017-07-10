@@ -8,8 +8,8 @@
     <title>Disinfectants</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="./src/css/bootstrap.css" rel="stylesheet">
+    <link href="./src/css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,8 +19,8 @@
     <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-toggleable-lg">
+      <div class="container" id="nav-container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -28,7 +28,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/#/">Disinfectant Encyclopedia</a>
+          <a class="navbar-brand" href="#/">Disinfectant Encyclopedia</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -49,23 +49,37 @@
 
 
     <!--build:js js/lib.js -->
-      <script src="/assets/lib/jquery-1.11.3.js"></script>
-      <script src="/assets/lib/bootstrap.js"></script>
-      <script src="/assets/lib/angular/angular.js"></script>
-      <script src="/assets/lib/angular/angular-sanitize.js"></script>
-      <script src="/assets/lib/angular/angular-route.js"></script>
-      <script src="/assets/lib/angular-location-update.js"></script>
-      <script src="/assets/lib/angular/angular-sanitize.js"></script>
+
+      <!-- Insert this line above script imports : Thanks to Dale Harders https://stackoverflow.com/questions/32621988/electron-jquery-is-not-defined -->
+      <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+      <!-- normal script imports etc  -->
+      <script src="./src/assets/lib/jquery-1.11.3.js"></script>
+      <script src="./src/assets/lib/bootstrap.js"></script>
+
+      <!-- Insert this line after script imports -->
+      <script>if (window.module) module = window.module;</script>
+      
+      <script src="./src/assets/lib/angular/angular.js"></script>
+      <script src="./src/assets/lib/angular/angular-sanitize.js"></script>
+      <script src="./src/assets/lib/angular/angular-route.js"></script>
+      <script src="./src/assets/lib/angular-location-update.js"></script>
+      <script src="./src/assets/lib/angular/angular-sanitize.js"></script>
     <!-- endbuild -->
     
     <!--build:js js/app.js -->
-      <script src="/app/app.module.js"></script>
-      <script src="/app/app.routes.js"></script>
-      <script src="/app/components/mainController.js"></script>
+      <script src="./src/app/app.module.js"></script>
+      <script src="./src/app/app.routes.js"></script>
 
-      <script src="app/components/items-surfaces/itemsSurfacesValue.js"></script>
-      <script src="app/components/items-surfaces/itemsSurfacesCtrl.js"></script>
-      <script src="app/components/disinfectant-level/disinfectantCtrl.js"></script>
+      <script src="./src/app/components/mainController.js"></script>
+
+      <script src="./src/app/components/items-surfaces/itemsSurfacesValue.js"></script>
+
+      <script src="./src/app/components/items-surfaces/itemsSurfacesCtrl.js"></script>
+      <script src="./src/app/components/disinfectant-level/disinfectantCtrl.js"></script>
+      <script src="./src/app/components/definitions/definitionsCtrl.js"></script>
+      
+      <script src="./src/app/components/definitions/definitions.js"></script>
     <!-- endbuild -->
     
   </body>
