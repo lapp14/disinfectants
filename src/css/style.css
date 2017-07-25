@@ -1,5 +1,7 @@
 
 /**
+	navy: #2F4050
+	nav text:  #C3CFE5
 	green: #2F4050
 	yellow: #f7c331;
 
@@ -41,6 +43,10 @@ p {
 	font-size: 1.2em;
 	line-height: 2em;
 	font-weight: thin;
+}
+
+.sterile {
+	color: #f00;
 }
 
 input.search {
@@ -338,7 +344,33 @@ div.definition .definition-content .term {
 
 }
 
-div.definition-list {
+div.definition-content {
+	padding: 12px;
+	margin-left: 231px;
+}
+
+div.definition-content table {
+	box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.47);
+}
+
+div.definition-content table tr td {
+	vertical-align: top;
+	border: 1px solid #ccc;
+	padding: 12px;
+}
+
+div.definition-content table tr:first-child td {
+	background: #2F4050;
+	color:  #C3CFE5;
+	font-size: 1.3em;
+}
+
+div.definition-content table tr td ul {
+	padding: 10px;
+}
+
+
+div.side-menu {
 	opacity: 0.88;
 	position: fixed;
 	overflow-y: auto;
@@ -348,13 +380,40 @@ div.definition-list {
 	bottom: 12px;
 }
 
-div.definition-list ul {
+div.side-menu.items-surfaces ul {
+	margin-left: 0;
+	padding: 0;
+}
+
+div.side-menu.items-surfaces span.header {
+	display: block;
+	font-size: 1.15em; 
+	padding-top: 8px;
+}
+
+div.side-menu.items-surfaces ul:first-child {
+	margin-bottom: 10px;
+}
+
+div.side-menu.items-surfaces ul ul {
+	margin-left: 8px;
+}
+
+div.side-menu.items-surfaces ul ul ul {
+	margin-left: 16px;
+}
+
+div.side-menu.items-surfaces ul ul ul ul {
+	margin-left: 24px;
+}
+
+div.side-menu.definitions ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-div.definition-list ul li {
+div.side-menu.definitions ul li {
 	padding: 12px;
 	border-left: 1px solid #ddd;
 	border-right: 1px solid #ddd;
@@ -364,13 +423,8 @@ div.definition-list ul li {
 	background: linear-gradient(to top, #FFFFFF, #f6f6f6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-div.definition-list ul li:first-child {
+div.side-menu.definitions ul li:first-child {
 	border-top: 1px solid #ddd;
-}
-
-div.definition-content {
-	padding: 12px;
-	margin-left: 231px;
 }
 
 ul.links {

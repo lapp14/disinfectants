@@ -28,7 +28,7 @@ app.on('ready', function () {
     mainWindow.loadURL('file://' + __dirname + '/index.html');
 
     // Open the DevTools.
-    mainWindow.openDevTools();
+    //mainWindow.openDevTools();
 
     // opens all target="_blank" windows in default browser
     mainWindow.webContents.on('new-window', function(e, url) {

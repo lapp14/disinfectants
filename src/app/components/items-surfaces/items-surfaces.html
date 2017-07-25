@@ -1,8 +1,9 @@
-<div class="definition-list">
+<div class="side-menu items-surfaces">
   <script type="text/ng-template"  id="tree_item_renderer.html">
-    <a href="#/items-surfaces" ng-click="IS.setContent(data.page)">
+    <a href="#/items-surfaces" ng-click="IS.setContent(data.page)" ng-if="data.page != null">
       {{data.name}}
     </a>
+    <span ng-if="data.page == null" class="header">{{data.name}}</span>
     <ul>
       <li ng-repeat="data in data.nodes" ng-include="'tree_item_renderer.html'"></li>
     </ul>
